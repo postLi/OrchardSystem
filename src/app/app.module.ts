@@ -1,18 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
+import {RootRouter} from "./orchard/router/router";
 
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './orchard/components/home/home.component';
+import { HeightlineDirective } from './orchard/directives/heightline.directive';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    HeightlineDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    RootRouter
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [HomeComponent]
 })
 export class AppModule { }
